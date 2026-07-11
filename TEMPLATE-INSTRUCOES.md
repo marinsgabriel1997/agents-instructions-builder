@@ -138,13 +138,25 @@ Mover planos concluídos para `planos/executados/`, preservando nome e prioridad
 
 ### 1.6.1. Estrutura recomendada do plano
 
+Bloco de contexto:
+
 - `Objetivo`
 - `Contexto`
 - `Escopo`
 - `Estado desejado`
-- `Plano de implementação`
 - `Riscos e premissas`
-- `Critérios de aceite`
+
+Fases (uma seção por fase, na ordem de execução):
+
+```
+### Fase <N> — <entrega funcional>
+
+- [ ] tarefa 1
+- [ ] tarefa 2
+- [ ] tarefa 3
+
+Critério de conclusão: <condição objetiva que marca a fase como concluída>
+```
 
 Regras:
 
@@ -154,7 +166,9 @@ Regras:
 - deve conter apenas contexto técnico permanente;
 - não deve registrar contexto transitório da sessão ou conversa;
 - não deve conter instruções para o próximo agente;
-- não deve repetir regras do arquivo principal de instruções.
+- não deve repetir regras do arquivo principal de instruções;
+- marcar `[x]` a tarefa somente após confirmar que foi executada;
+- não avançar para a fase seguinte antes de atender o critério de conclusão da fase atual.
 
 ## 1.7. Arquitetura e contratos
 
