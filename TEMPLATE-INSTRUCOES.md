@@ -6,43 +6,7 @@ Selecione somente as seções e regras aplicáveis ao projeto. O resultado final
 
 Manter `AGENTS.md` e `CLAUDE.md` com até 150 linhas quando possível.
 
-## 1.1. Indice
-
-- [1. Template de instruções para novos projetos](#1-template-de-instruções-para-novos-projetos)
-  - [1.1. Indice](#11-indice)
-  - [1.2. Visão geral](#12-visão-geral)
-  - [1.2. Ambiente e comandos](#12-ambiente-e-comandos)
-  - [1.3. Modos de trabalho](#13-modos-de-trabalho)
-    - [1.3.1. Planejamento](#131-planejamento)
-    - [1.3.2. Execução](#132-execução)
-    - [1.3.3. Revisão](#133-revisão)
-  - [1.4. Fluxo de entrega](#14-fluxo-de-entrega)
-  - [1.5. Planos](#15-planos)
-    - [1.6.1. Estrutura recomendada do plano](#161-estrutura-recomendada-do-plano)
-  - [1.6. Arquitetura e contratos](#16-arquitetura-e-contratos)
-  - [1.7. Nomenclatura e qualidade de código](#17-nomenclatura-e-qualidade-de-código)
-  - [1.8. Documentação e contexto](#18-documentação-e-contexto)
-  - [1.9. Sincronização de instruções](#19-sincronização-de-instruções)
-  - [1.10. Autoridade das fontes](#110-autoridade-das-fontes)
-  - [1.11. Testes](#111-testes)
-  - [1.12. Validação](#112-validação)
-  - [1.13. Compatibilidade](#113-compatibilidade)
-    - [1.13.1. Modelo A — Migração completa](#1131-modelo-a--migração-completa)
-    - [1.13.2. Modelo B — Compatibilidade controlada](#1132-modelo-b--compatibilidade-controlada)
-    - [1.13.3. Modelo C — Política customizada](#1133-modelo-c--política-customizada)
-  - [1.14. Versionamento](#114-versionamento)
-    - [1.14.1. Modelo A — SemVer por compatibilidade externa](#1141-modelo-a--semver-por-compatibilidade-externa)
-    - [1.14.2. Modelo B — SemVer por relevância da entrega](#1142-modelo-b--semver-por-relevância-da-entrega)
-    - [1.14.3. Modelo C — Política customizada](#1143-modelo-c--política-customizada)
-  - [1.15. Changelog](#115-changelog)
-  - [1.16. Commits](#116-commits)
-    - [1.16.1. Modelo A — Conventional Commits em português brasileiro](#1161-modelo-a--conventional-commits-em-português-brasileiro)
-    - [1.16.2. Modelo B — Escopo de domínio](#1162-modelo-b--escopo-de-domínio)
-    - [1.16.3. Modelo C — Política customizada](#1163-modelo-c--política-customizada)
-  - [1.17. Restrições](#117-restrições)
-  - [1.18. Referências situacionais](#118-referências-situacionais)
-
-## 1.2. Visão geral
+## 1.1. Visão geral
 
 Registrar somente o contexto mínimo necessário para orientar o agente:
 
@@ -136,7 +100,7 @@ Usar intervalos de `10` por padrão para permitir inserções intermediárias, c
 
 Mover planos concluídos para `planos/executados/`, preservando nome e prioridade histórica.
 
-### 1.6.1. Estrutura recomendada do plano
+### 1.5.1. Estrutura recomendada do plano
 
 - `Objetivo`
 - `Contexto`
