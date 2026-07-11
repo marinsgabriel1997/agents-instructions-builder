@@ -21,6 +21,7 @@ Analise este projeto e responda cada item abaixo em 1-3 linhas, de forma compact
 11. Convenções (nomenclatura, commits, branches):
 12. Limitações (restrições técnicas, dívidas conhecidas):
 13. Lacunas e inconsistências observadas (o que falta, o que conflita):
+14. Instruções existentes (já existe `AGENTS.md`, `CLAUDE.md` ou outras instruções em outros arquivos? Se sim, resumir os pontos principais de cada um — objetivo, regras normativas, fluxo de trabalho, restrições — sem colar o conteúdo integral):
 
 ---
 

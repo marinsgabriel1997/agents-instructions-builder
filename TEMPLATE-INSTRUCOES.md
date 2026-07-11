@@ -106,7 +106,7 @@ Fluxo recomendado:
 5. Executar as validações previstas.
 6. Solicitar validação do usuário no ambiente real quando necessário.
 7. Atualizar documentação e changelog.
-8. Aguardar autorização explícita para commit.
+8. Solicitar autorização explícita para commit, apresentando já a mensagem de commit proposta conforme a convenção ativa.
 9. Atualizar a versão conforme a política ativa.
 10. Fechar a release correspondente no changelog.
 11. Executar validações finais.
@@ -324,10 +324,11 @@ Antes do commit:
 
 1. Analisar as alterações pendentes.
 2. Confirmar que pertencem à entrega aprovada.
-3. Atualizar a versão.
-4. Fechar a release no changelog.
-5. Executar as validações finais.
-6. Realizar o commit conforme a convenção ativa.
+3. Redigir a mensagem de commit conforme a convenção ativa e apresentá-la junto do pedido de autorização, sem esperar solicitação separada do usuário — o contexto das alterações já está disponível.
+4. Atualizar a versão.
+5. Fechar a release no changelog.
+6. Executar as validações finais.
+7. Realizar o commit com a mensagem apresentada, ajustada conforme eventual feedback do usuário.
 
 ### 1.17.1. Modelo A — Conventional Commits em português brasileiro
 
