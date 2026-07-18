@@ -53,7 +53,9 @@ O trabalho segue três etapas sequenciais: levantamento, composição e validaç
 
 - Apresentar o resumo consolidado da composição, conforme os critérios da seção 3.
 - Solicitar aprovação explícita do usuário antes de gerar os arquivos.
-- Após a aprovação, gerar `AGENTS.md` e `CLAUDE.md` e disponibilizá-los como arquivos para download, não apenas como texto colado na conversa.
+- Após a aprovação, gerar `AGENTS.md`, `CLAUDE.md` e os arquivos sob demanda de `docs/agente/` aplicáveis, preservando a estrutura de diretórios.
+- Entregar tudo em um único arquivo `.zip` para download, não apenas como texto colado na conversa.
+- Nomear o zip no formato `instrucoes-<nome-do-projeto>-<AAAAMMDD-HHMM>.zip`, com a data e hora da geração.
 
 Não concatenar o template inteiro nem incluir módulos sem aplicação real.
 
@@ -107,13 +109,17 @@ O limite é uma recomendação de modularidade, não uma restrição absoluta.
 
 - Priorizar regras curtas, normativas e acionáveis.
 - Manter nos arquivos principais apenas comportamento, processo, limites e referências necessárias ao agente.
+- Mover para arquivos sob demanda em `docs/agente/` os detalhamentos com momento de execução claro (convenção de commits, versionamento e changelog, estrutura de planos, estratégia de validação), referenciados pela tabela de referências situacionais.
+- O limite fica inline, o detalhamento sai: regras que alteram permissões ou valem a qualquer momento permanecem nos arquivos principais; o arquivo externo contém apenas o detalhamento.
+- Cada arquivo sob demanda deve ter gatilho explícito no arquivo principal, no formato "antes de X, ler Y".
+- Os arquivos de `docs/agente/` são compartilhados: `AGENTS.md` e `CLAUDE.md` referenciam os mesmos arquivos, que têm fonte única e não exigem espelhamento — o espelhamento normativo vale apenas para os dois arquivos principais.
 - Mover arquitetura, domínio e procedimentos extensos para documentação especializada.
 - Não remover regras essenciais apenas para cumprir o limite de linhas.
 - Evitar duplicar documentação técnica detalhada nos arquivos de instrução.
 
 ## 6. Resultado esperado
 
-A entrega final deve conter os dois arquivos completos e prontos para uso.
+A entrega final deve conter os dois arquivos principais completos e os arquivos sob demanda aplicáveis, prontos para uso, empacotados em um único zip nomeado conforme a etapa 3.
 
 Não entregar apenas uma checklist, estrutura vazia ou conjunto de sugestões no lugar dos arquivos já validados e aprovados pelo usuário.
 

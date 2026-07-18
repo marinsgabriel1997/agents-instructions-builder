@@ -6,6 +6,8 @@ Selecione somente as seções e regras aplicáveis ao projeto. O resultado final
 
 Manter `AGENTS.md` e `CLAUDE.md` com até 150 linhas quando possível.
 
+Seções marcadas como **externalizável** devem preferencialmente virar arquivos sob demanda em `docs/agente/`, compartilhados por `AGENTS.md` e `CLAUDE.md` e referenciados pela tabela da seção 18. O limite fica inline no arquivo principal; o detalhamento vai para o arquivo externo.
+
 ## 1. Visão geral
 
 Registrar somente o contexto mínimo necessário para orientar o agente:
@@ -110,6 +112,8 @@ Mover planos concluídos para `planos/executados/`, preservando nome e prioridad
 
 ### 5.1. Estrutura recomendada do plano
 
+Externalizável para `docs/agente/planos.md` — gatilho: "ao criar ou atualizar um plano, ler". Manter inline o diretório `planos/` e o formato de nome.
+
 - `Objetivo`
 - `Contexto`
 - `Escopo`
@@ -207,6 +211,8 @@ Quando fontes canônicas entrarem em conflito, identificar o conflito antes de p
 
 ## 11. Testes
 
+Externalizável para `docs/agente/validacao.md`, junto com a seção 12 — gatilho: "ao definir estratégia de validação ou escrever testes, ler".
+
 - Tratar testes automatizados como proteção contra regressões e desvios de comportamento.
 - Criar ou atualizar testes ao alterar comportamento testável.
 - Preservar testes existentes como contratos do comportamento já validado.
@@ -215,6 +221,8 @@ Quando fontes canônicas entrarem em conflito, identificar o conflito antes de p
 - Testes devem validar comportamento e contratos, evitando acoplamento desnecessário a detalhes internos.
 
 ## 12. Validação
+
+Externalizável para `docs/agente/validacao.md`, junto com a seção 11. Manter inline: "não seguir para commit após validação reprovada".
 
 - Definir a estratégia de validação durante o planejamento.
 - Manter critérios de aceite objetivos.
@@ -252,6 +260,8 @@ Descrever a política específica do projeto.
 
 ## 14. Versionamento
 
+Externalizável para `docs/agente/release.md`, junto com a seção 15 — gatilho: "antes de atualizar versão e fechar a release, ler".
+
 Antes de todo commit de entrega, atualizar a versão conforme a política ativa.
 
 Declarar a fonte canônica da versão.
@@ -278,6 +288,8 @@ Descrever a política específica do projeto.
 
 ## 15. Changelog
 
+Externalizável para `docs/agente/release.md`, junto com a seção 14.
+
 Manter `CHANGELOG.md` atualizado para mudanças notáveis.
 
 - Usar `## [Unreleased]` durante o trabalho.
@@ -301,6 +313,8 @@ Categorias disponíveis:
 Usar somente as categorias aplicáveis.
 
 ## 16. Commits
+
+Externalizável para `docs/agente/commits.md` — gatilho: "antes de redigir mensagem de commit, ler". Manter inline: "commit somente após autorização explícita do usuário".
 
 Commit somente após autorização explícita do usuário.
 
@@ -372,12 +386,19 @@ Exemplos de categorias:
 
 ## 18. Referências situacionais
 
-Quando o projeto possuir documentação especializada, manter uma tabela indicando quando consultar cada documento.
+Manter no arquivo principal uma tabela indicando quando consultar cada documento sob demanda. A tabela é obrigatória sempre que houver arquivo em `docs/agente/` ou documentação especializada.
 
-| Documento     | Consultar quando |
-| ------------- | ---------------- |
-| `[DOCUMENTO]` | [SITUAÇÃO]       |
+| Documento                   | Consultar quando                                          |
+| --------------------------- | --------------------------------------------------------- |
+| `docs/agente/commits.md`    | antes de redigir mensagem de commit                       |
+| `docs/agente/release.md`    | antes de atualizar versão e fechar release no changelog   |
+| `docs/agente/planos.md`     | ao criar ou atualizar um plano                            |
+| `docs/agente/validacao.md`  | ao definir estratégia de validação ou escrever testes     |
+| `[DOCUMENTO]`               | [SITUAÇÃO]                                                |
 
-Consultar somente os documentos necessários para a tarefa atual.
+Regras:
 
-Adicionar à tabela novos documentos que definam contratos ou procedimentos que precisem ser consultados sob demanda.
+- redigir o gatilho como instrução normativa ("antes de X, ler Y"), não como referência passiva;
+- incluir na tabela somente os arquivos que existirem no projeto gerado;
+- consultar somente os documentos necessários para a tarefa atual;
+- adicionar à tabela novos documentos que definam contratos ou procedimentos consultados sob demanda.
