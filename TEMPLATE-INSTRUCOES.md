@@ -1,4 +1,4 @@
-# 1. Template de instruções para novos projetos
+# Template de instruções para novos projetos
 
 Use este arquivo como catálogo modular para compor `AGENTS.md` e `CLAUDE.md`.
 
@@ -6,7 +6,7 @@ Selecione somente as seções e regras aplicáveis ao projeto. O resultado final
 
 Manter `AGENTS.md` e `CLAUDE.md` com até 150 linhas quando possível.
 
-## 1.1. Visão geral
+## 1. Visão geral
 
 Registrar somente o contexto mínimo necessário para orientar o agente:
 
@@ -15,7 +15,7 @@ Registrar somente o contexto mínimo necessário para orientar o agente:
 - ambiente oficial;
 - fonte canônica de estado, quando existir.
 
-## 1.2. Ambiente e comandos
+## 2. Ambiente e comandos
 
 Documentar somente comandos oficiais do projeto, por exemplo:
 
@@ -28,9 +28,9 @@ Documentar somente comandos oficiais do projeto, por exemplo:
 
 Não inventar comandos ou procedimentos alternativos quando existir fluxo oficial.
 
-## 1.3. Modos de trabalho
+## 3. Modos de trabalho
 
-### 1.3.1. Planejamento
+### 3.1. Planejamento
 
 - Ler somente o código e a documentação relevantes.
 - Alinhar escopo, requisitos e proposta técnica.
@@ -40,7 +40,7 @@ Não inventar comandos ou procedimentos alternativos quando existir fluxo oficia
 - Não alterar o estado do projeto.
 - Não realizar commit.
 
-### 1.3.2. Execução
+### 3.2. Execução
 
 - Implementar somente plano aprovado.
 - Respeitar escopo, arquitetura e contratos.
@@ -49,7 +49,7 @@ Não inventar comandos ou procedimentos alternativos quando existir fluxo oficia
 - Executar as validações previstas.
 - Não realizar commit sem autorização explícita.
 
-### 1.3.3. Revisão
+### 3.3. Revisão
 
 - Trabalhar somente em leitura.
 - Auditar código, diff, implementação, plano e critérios de aceite.
@@ -57,9 +57,17 @@ Não inventar comandos ou procedimentos alternativos quando existir fluxo oficia
 - Não alterar código, dados ou documentação.
 - Não realizar commit.
 
-Se o modo não estiver definido e isso alterar materialmente o que pode ser feito, alinhar com o usuário.
+### 3.4. Orquestrador (modificador)
 
-## 1.4. Fluxo de entrega
+- Sempre combinado a um modo base (planejamento, execução ou revisão), herdando seus limites.
+- Objetivo: poupar contexto do orquestrador; subagentes de modelos mais baratos fazem o trabalho pesado, proporcional à complexidade da tarefa.
+- Pode: especificar e delegar tarefas, editar documentos, verificar entregas com evidência própria (diff, grep, trecho), decidir e escalar ao usuário.
+- Não pode: alterar código ou configuração diretamente, fazer trabalho braçal, aceitar relatório de subagente sem verificar, paralelizar tarefas sobre os mesmos arquivos, omitir falhas de subagente.
+- Pode usar até 10 agents menores (limitando-se a sonnet, haiku, gpt 5.4) para executar tarefas em simultâneo. Escolher o modelo conforme dificuldade da tarefa.
+
+Se o modo não estiver claro e isso alterar permissões, alinhar com o usuário.
+
+## 4. Fluxo de entrega
 
 Fluxo recomendado:
 
@@ -80,7 +88,7 @@ Ausência de objeção não representa aprovação explícita.
 
 Mudança de escopo, reprovação ou alteração relevante da proposta técnica exige revisão do plano e nova aprovação.
 
-## 1.5. Planos
+## 5. Planos
 
 Manter planos ativos em `planos/`.
 
@@ -100,7 +108,7 @@ Usar intervalos de `10` por padrão para permitir inserções intermediárias, c
 
 Mover planos concluídos para `planos/executados/`, preservando nome e prioridade histórica.
 
-### 1.5.1. Estrutura recomendada do plano
+### 5.1. Estrutura recomendada do plano
 
 - `Objetivo`
 - `Contexto`
@@ -132,7 +140,7 @@ Regras:
 - marcar `[x]` a tarefa somente após confirmar que foi executada;
 - não avançar para a fase seguinte antes de atender o critério de conclusão da fase atual.
 
-## 1.6. Arquitetura e contratos
+## 6. Arquitetura e contratos
 
 - Implementar somente o escopo aprovado.
 - Não adicionar funcionalidades paralelas por iniciativa própria.
@@ -145,7 +153,7 @@ Regras:
 
 Quando uma alteração exigir mudar contrato, convenção estrutural ou decisão arquitetural, registrar explicitamente no plano e obter aprovação.
 
-## 1.7. Nomenclatura e qualidade de código
+## 7. Nomenclatura e qualidade de código
 
 - Manter nomenclatura consistente com a linguagem, framework e padrões já adotados pelo projeto.
 - Usar nomes claros, autoexplicativos e orientados à responsabilidade ou ao conceito representado.
@@ -156,7 +164,7 @@ Quando uma alteração exigir mudar contrato, convenção estrutural ou decisão
 - Preservar os padrões existentes ao alterar código; mudanças de convenção devem ser intencionais e aprovadas.
 - Usar comentários para explicar contexto ou decisões não evidentes, não para repetir o código.
 
-## 1.8. Documentação e contexto
+## 8. Documentação e contexto
 
 - Atualizar a documentação relacionada às alterações.
 - Separar documentação técnica permanente de contexto transitório.
@@ -168,7 +176,7 @@ Quando uma alteração exigir mudar contrato, convenção estrutural ou decisão
 - Consultar documentação sob demanda.
 - Não ler toda a documentação por precaução quando houver referências situacionais suficientes.
 
-## 1.9. Sincronização de instruções
+## 9. Sincronização de instruções
 
 `AGENTS.md` e `CLAUDE.md` devem ser espelhos normativos.
 
@@ -181,7 +189,7 @@ Quando uma alteração exigir mudar contrato, convenção estrutural ou decisão
 - Estrutura e redação podem variar, mas significado, limites e políticas devem permanecer equivalentes.
 - Regras exclusivas exigem diferença intencional, explícita e aprovada pelo usuário.
 
-## 1.10. Autoridade das fontes
+## 10. Autoridade das fontes
 
 Separar autoridade por tipo de informação:
 
@@ -197,7 +205,7 @@ Não assumir que o código atual representa o estado desejado quando existir mud
 
 Quando fontes canônicas entrarem em conflito, identificar o conflito antes de prosseguir.
 
-## 1.11. Testes
+## 11. Testes
 
 - Tratar testes automatizados como proteção contra regressões e desvios de comportamento.
 - Criar ou atualizar testes ao alterar comportamento testável.
@@ -206,7 +214,7 @@ Quando fontes canônicas entrarem em conflito, identificar o conflito antes de p
 - Quando um teste existente falhar, investigar a causa; não adaptar o teste apenas para fazer a implementação passar.
 - Testes devem validar comportamento e contratos, evitando acoplamento desnecessário a detalhes internos.
 
-## 1.12. Validação
+## 12. Validação
 
 - Definir a estratégia de validação durante o planejamento.
 - Manter critérios de aceite objetivos.
@@ -218,11 +226,11 @@ Quando fontes canônicas entrarem em conflito, identificar o conflito antes de p
 - Não considerar a entrega concluída enquanto os critérios aplicáveis não forem atendidos.
 - Não seguir para commit após validação reprovada.
 
-## 1.13. Compatibilidade
+## 13. Compatibilidade
 
 O projeto deve declarar uma política de compatibilidade.
 
-### 1.13.1. Modelo A — Migração completa
+### 13.1. Modelo A — Migração completa
 
 - Não criar retrocompatibilidade interna.
 - Não manter fluxos ou estruturas legadas por precaução.
@@ -230,7 +238,7 @@ O projeto deve declarar uma política de compatibilidade.
 - Em mudanças estruturais, migrar integralmente para o modelo novo.
 - Remover o modelo anterior após a migração.
 
-### 1.13.2. Modelo B — Compatibilidade controlada
+### 13.2. Modelo B — Compatibilidade controlada
 
 - Preservar contratos públicos explicitamente suportados.
 - Documentar migrações, depreciações e remoções.
@@ -238,11 +246,11 @@ O projeto deve declarar uma política de compatibilidade.
 - Não criar camadas legadas sem necessidade comprovada.
 - Remover compatibilidade obsoleta conforme a política de depreciação.
 
-### 1.13.3. Modelo C — Política customizada
+### 13.3. Modelo C — Política customizada
 
 Descrever a política específica do projeto.
 
-## 1.14. Versionamento
+## 14. Versionamento
 
 Antes de todo commit de entrega, atualizar a versão conforme a política ativa.
 
@@ -250,7 +258,7 @@ Declarar a fonte canônica da versão.
 
 Não atualizar manualmente arquivos derivados quando existir processo oficial de build, geração ou sincronização.
 
-### 1.14.1. Modelo A — SemVer por compatibilidade externa
+### 14.1. Modelo A — SemVer por compatibilidade externa
 
 - `PATCH`: correção, refatoração, documentação ou manutenção sem nova funcionalidade.
 - `MINOR`: nova funcionalidade sem quebra de compatibilidade externa.
@@ -258,17 +266,17 @@ Não atualizar manualmente arquivos derivados quando existir processo oficial de
 - Migração interna, remoção de legado ou refatoração ampla não geram `MAJOR` por si só.
 - Na dúvida, usar o menor incremento aplicável.
 
-### 1.14.2. Modelo B — SemVer por relevância da entrega
+### 14.2. Modelo B — SemVer por relevância da entrega
 
 - `PATCH`: correções.
 - `MINOR`: funcionalidades ou mudanças relevantes.
 - `MAJOR`: incompatibilidades que exijam adaptação externa.
 
-### 1.14.3. Modelo C — Política customizada
+### 14.3. Modelo C — Política customizada
 
 Descrever a política específica do projeto.
 
-## 1.15. Changelog
+## 15. Changelog
 
 Manter `CHANGELOG.md` atualizado para mudanças notáveis.
 
@@ -292,7 +300,7 @@ Categorias disponíveis:
 
 Usar somente as categorias aplicáveis.
 
-## 1.16. Commits
+## 16. Commits
 
 Commit somente após autorização explícita do usuário.
 
@@ -306,7 +314,7 @@ Antes do commit:
 6. Executar as validações finais.
 7. Realizar o commit com a mensagem apresentada, ajustada conforme eventual feedback do usuário.
 
-### 1.16.1. Modelo A — Conventional Commits em português brasileiro
+### 16.1. Modelo A — Conventional Commits em português brasileiro
 
 Formato:
 
@@ -332,7 +340,7 @@ Regras:
 - não resumir mudanças diferentes em uma descrição genérica;
 - usar `!` ou `BREAKING CHANGE:` somente em quebra de compatibilidade externa confirmada.
 
-### 1.16.2. Modelo B — Escopo de domínio
+### 16.2. Modelo B — Escopo de domínio
 
 Formato:
 
@@ -345,11 +353,11 @@ Regras:
 - escrever em português brasileiro;
 - usar mensagem curta e objetiva.
 
-### 1.16.3. Modelo C — Política customizada
+### 16.3. Modelo C — Política customizada
 
 Descrever a convenção específica do projeto.
 
-## 1.17. Restrições
+## 17. Restrições
 
 Registrar somente limites inegociáveis e específicos do projeto.
 
@@ -362,7 +370,7 @@ Exemplos de categorias:
 - operações destrutivas;
 - limites de segurança ou escopo.
 
-## 1.18. Referências situacionais
+## 18. Referências situacionais
 
 Quando o projeto possuir documentação especializada, manter uma tabela indicando quando consultar cada documento.
 

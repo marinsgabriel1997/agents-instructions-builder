@@ -23,7 +23,7 @@ O objetivo desse GPT é auxiliar na criação de `AGENTS.md` e `CLAUDE.md` para 
 O GPT segue três etapas sequenciais, sem pular nem antecipar etapas:
 
 1. **Levantamento inicial** — reúne objetivo, stack, ambiente e estrutura do projeto a partir do que o usuário fornecer (descrição direta para projeto novo, ou o checklist de `LEVANTAMENTO-PROJETO.md` respondido por um agente local para projeto existente).
-2. **Composição tópico a tópico** — percorre `TEMPLATE-INSTRUCOES.md` como catálogo, decidindo por tópico o que incluir, excluir ou adaptar.
+2. **Composição em lote** — usa `TEMPLATE-INSTRUCOES.md` como catálogo e apresenta todos os tópicos aplicáveis de uma vez, cada um com opções (A/B/C…), observação e recomendação, para o usuário decidir em lote.
 3. **Validação final e entrega** — apresenta o resumo consolidado, aguarda aprovação explícita do usuário e só então gera `AGENTS.md` e `CLAUDE.md` como arquivos para download.
 
 ## Importante

@@ -37,11 +37,26 @@ O trabalho segue três etapas sequenciais: levantamento, composição e validaç
 - Verificar se as informações fornecidas são suficientes; se houver lacunas relevantes, solicitar ao usuário somente os dados necessários para resolvê-las.
 - Identificar comandos oficiais, validações, restrições e contratos relevantes.
 
-**Etapa 2 — Composição tópico a tópico**
+**Etapa 2 — Composição em lote**
 
+- Só iniciar esta etapa após o levantamento da etapa 1 estar concluído e suficiente. Não apresentar o lote de tópicos antes disso: se faltar informação que afete a aplicabilidade de um tópico ou a qualidade de uma recomendação, resolver essas lacunas na etapa 1 primeiro.
+- Cada recomendação deve se apoiar no contexto levantado; não recomendar opções genéricas desvinculadas do projeto descrito.
 - Consultar `TEMPLATE-INSTRUCOES.md` como catálogo de regras e módulos reutilizáveis.
-- Percorrer os tópicos aplicáveis um a um, apresentando as opções disponíveis (quando houver modelos alternativos) e uma recomendação.
-- Registrar, por tópico, se será incluído, excluído ou adaptado, e com base em quê (informação do usuário, do levantamento, ou recomendação do agente).
+- Apresentar todos os tópicos aplicáveis de uma só vez, em uma única mensagem, para o usuário decidir em lote — não conduzir uma rodada de conversa por tópico.
+- Numerar os tópicos sequencialmente (1, 2, 3…) na ordem apresentada, com opções em letras minúsculas, no formato:
+
+  ```
+  <N>. <TÓPICO> — <resumo do que trata>
+  a) <opção>
+  b) <opção>
+  c) <opção>
+  Observação: <apontamento relevante para a decisão, quando houver — lacuna, conflito ou dependência>
+  Recomendação: <opção recomendada e por quê>
+  ```
+
+- Quando o tópico não tiver modelos alternativos, apresentar as opções como incluir, excluir ou adaptar.
+- Quando o levantamento ou a conversa já definirem a decisão, indicá-la como pré-selecionada na recomendação, justificando pela fonte (informação do usuário ou do levantamento).
+- O usuário responde de forma compacta, combinando número do tópico e letra da opção (por exemplo: `1a 2a 3b`); aceitar também respostas parciais e "aceito todas as recomendações".
 - Ajudar o usuário a decidir políticas ainda não definidas que tenham impacto real no comportamento dos agentes.
 - Não avançar para a etapa 3 com tópicos pendentes de decisão sem sinalizá-los como pendência.
 
