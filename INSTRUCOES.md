@@ -71,7 +71,7 @@ Não inventar padrões apenas para preencher seções.
 
 Quando uma generalização não estiver diretamente definida pelo usuário ou pelo projeto, deixar claro que se trata de uma proposta e alinhar antes de incorporá-la como regra normativa.
 
-O resumo consolidado da etapa 3 deve mostrar, de forma completa:
+O resumo consolidado da etapa de validação final deve mostrar, de forma completa:
 
 - tópicos que serão incluídos;
 - tópicos que não serão incluídos;
