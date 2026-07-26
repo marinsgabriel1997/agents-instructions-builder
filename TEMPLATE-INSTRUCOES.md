@@ -6,7 +6,7 @@ Selecione somente as seções e regras aplicáveis ao projeto. O resultado final
 
 Manter `AGENTS.md` e `CLAUDE.md` com até 150 linhas quando possível.
 
-Seções marcadas como **externalizável** devem preferencialmente virar arquivos sob demanda em `docs/agente/`, compartilhados por `AGENTS.md` e `CLAUDE.md` e referenciados pela tabela da seção 18. O limite fica inline no arquivo principal; o detalhamento vai para o arquivo externo.
+Seções marcadas como **externalizável** devem preferencialmente virar arquivos sob demanda em `docs/agente/`, compartilhados por `AGENTS.md` e `CLAUDE.md` e referenciados pela tabela da seção 19. O limite fica inline no arquivo principal; o detalhamento vai para o arquivo externo.
 
 ## 1. Visão geral
 
@@ -371,7 +371,18 @@ Regras:
 
 Descrever a convenção específica do projeto.
 
-## 17. Restrições
+## 17. Regra padrão de formatação
+
+- Use ASCII puro em diagramas, tabelas, wireframes e blocos de terminal.
+- Não use emojis.
+- Não use caracteres decorativos Unicode.
+- Use apenas `-`, `|`, `+`, `>`, `<`, `[ ]`, `[x]` e caracteres comuns.
+- Preserve acentos no texto normal quando o arquivo estiver em UTF-8.
+- Dentro de estruturas que dependem de alinhamento, prefira texto sem acentos.
+- Sempre coloque wireframes e diagramas dentro de bloco de código.
+- Todas as linhas de caixas devem possuir largura consistente.
+
+## 18. Restrições
 
 Registrar somente limites inegociáveis e específicos do projeto.
 
@@ -384,7 +395,7 @@ Exemplos de categorias:
 - operações destrutivas;
 - limites de segurança ou escopo.
 
-## 18. Referências situacionais
+## 19. Referências situacionais
 
 Manter no arquivo principal uma tabela indicando quando consultar cada documento sob demanda. A tabela é obrigatória sempre que houver arquivo em `docs/agente/` ou documentação especializada.
 
